@@ -1,0 +1,258 @@
+//1.execute normal class
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="testng.cardetails"/>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+//2.include and exclude methods
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="cardeal">
+    <classes>
+      <class name="testng.cardetails">
+      <methods>
+      <include name="nameofcar"/>
+      </methods>
+      </class>
+      
+      <class name="testng.testfirstclass">
+      <methods>
+      
+      <exclude name="testsecond"/>
+      
+      </methods>
+      
+      </class>
+      
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+........
+
+//3.execute different packages
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="nordic">
+  <packages>
+    <package name="testngsecond"/>
+      
+     </packages>
+      
+    
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+//4.want to execute all method name of same type in one class
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="nordic">
+  <classes>
+  <class name="testng.cardetails">
+  
+  <methods>
+  <include name="car.*"/>
+  
+  </methods>
+  </class>
+  
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+...
+//5.want to execute before and after test written in class  (@BeforeTest)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="cardeal">
+    <classes>
+      <class name="testng.cardetails">
+      <methods>
+      <include name="nameofcar"/>
+      </methods>
+      </class>
+      </classes>
+      </test>                        //till here what ever will be the annotation will be executed like(afterr and before)
+      
+     <test name="teststnordic"> 
+      <class name="testng.testfirstclass">
+      <methods>
+      
+      <exclude name="testsecond"/>
+      
+      </methods>
+      
+      </class>
+      
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+//6.want to execute before and after methods written in class  (@BeforeMethod)
+code will be same as 5
+
+//7.want to execute before class (@BeforeClass)
+
+
+//8.(data provider annotation)want to execute any of the different methods from different class (@Test (groups= {"smoke"}))
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+  <test name="nordic">
+  <groups>
+  <run>
+  
+  <include name="smoke"/>
+  
+  </run>
+  
+  </groups>
+  <classes>
+  <class name="testng.cardetails"/>
+  <class name="testng.testfirstclass"/>
+  
+  
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+//9.Annotaion helper attribute:
+//A.want to execute method before execution of the other method (depends on other method to execute)(@Test  (dependsOnMethods= {"executeafter"}))
+(depends on multiple other method to execute)(@Test  (dependsOnMethods= {"executeafter","second method name"}))
+
+//B.wants do not execute the methhod from class only (@Test   (enabled=false)
+//c.if any method is taking time to execute then want timeout (@Test (timeOut=4000))
+
+//10.Interview question there are two ways to deal with data driven from xml and from testng
+//A.Define Parameters to fetch url name from xml   
+(@Parameters({"URL"})
+	@Test  
+	public void carcolorofcar(String urlname)
+	{
+		System.out.println("wite");
+		System.out.println(urlname);
+	})
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<parameter name="URL" value="https://www.google.com/?gws_rd=ssl"/>
+  <test name="nordic">
+  <classes>
+  <class name="testng.cardetails"/>
+  <class name="testng.testfirstclass"/>
+  
+  
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+
+(it can be inside the seperate test or outside the test)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	
+	
+  <test name="nordic">
+  <parameter name="URL" value="https://www.google.com/?gws_rd=ssl"/>
+  <classes>
+  <class name="testng.testfirstclass"/>
+  
+  </classes>
+  </test>
+  
+   <test name="SECONDTEST">
+    <parameter name="URL" value="https://www.google.com/?gws_rd=ssl"/>
+   <parameter name="APIKEY" value="123456"/>
+  <classes>
+  
+  <class name="testng.cardetails"/>
+  
+  
+  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+//B.data provider  (from testng)
+	@DataProvider
+	public Object[][] getdata()
+	{  //1st combination- user name and password - good credit history
+	   //2nd combination- user name and password - bad histrory
+	   //3rd fraud history
+		     //make multi-dimentional object array
+		
+		Object[][] data=new Object[3][2];          //3 comibinations and 2 values (like username and password)
+		//1st set
+		data[0][0]="set first username";
+		data[0][1]="set first password";
+		
+		//2nd set
+		data[1][0]="set second username";
+		data[1][1]="set second password";	
+		
+		//3rd set
+		data[2][0]="set third username";
+		data[2][1]="set third password";
+		
+		return data;
+	}
+	
+	
+	@Test (dataProvider="getdata")
+	public void testdtaaprovider(String username,String password)
+	{
+		System.out.println("test data provider is working fine");
+		System.out.println(username);
+		System.out.println(password);
+	}
+	
+//11.Listeners (for eg. if we want to take screenshot after every test failure)	(use ITestListerner interface which implements testng listeners)
+(public class listnersc implements ITestListener{})
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+

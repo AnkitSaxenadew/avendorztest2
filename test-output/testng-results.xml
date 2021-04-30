@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="12" passed="11">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="304" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+    <groups>
+    </groups>
+    <test name="nordic" duration-ms="74" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+      <class name="testng.testfirstclass">
+        <test-method status="PASS" signature="carcolorofcar()[pri:0, instance:testng.testfirstclass@548a9f61]" name="carcolorofcar" duration-ms="15" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- carcolorofcar -->
+        <test-method status="PASS" signature="testsecond()[pri:0, instance:testng.testfirstclass@548a9f61]" name="testsecond" duration-ms="0" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testsecond -->
+        <test-method status="PASS" signature="demo()[pri:0, instance:testng.testfirstclass@548a9f61]" name="demo" duration-ms="0" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- demo -->
+      </class> <!-- testng.testfirstclass -->
+    </test> <!-- nordic -->
+    <test name="SECONDTEST" duration-ms="146" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+      <class name="testng.cardetails">
+        <test-method status="PASS" signature="beforeexecution()[pri:0, instance:testng.cardetails@42d80b78]" name="beforeexecution" duration-ms="0" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeexecution -->
+        <test-method status="PASS" signature="testclass()[pri:0, instance:testng.cardetails@42d80b78]" name="testclass" is-config="true" duration-ms="0" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testclass -->
+        <test-method status="FAIL" signature="carcolorofcar()[pri:0, instance:testng.cardetails@42d80b78]" name="carcolorofcar" duration-ms="21" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at org.testng.Assert.assertTrue(Assert.java:54)
+at testng.cardetails.carcolorofcar(cardetails.java:38)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- carcolorofcar -->
+        <test-method status="PASS" signature="carlenghtofcar()[pri:0, instance:testng.cardetails@42d80b78]" name="carlenghtofcar" duration-ms="16" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- carlenghtofcar -->
+        <test-method status="PASS" signature="executeafter()[pri:0, instance:testng.cardetails@42d80b78]" name="executeafter" duration-ms="0" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executeafter -->
+        <test-method status="PASS" signature="onerfcar()[pri:0, instance:testng.cardetails@42d80b78]" name="onerfcar" duration-ms="0" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onerfcar -->
+        <test-method status="PASS" signature="nameofcar()[pri:0, instance:testng.cardetails@42d80b78]" name="nameofcar" duration-ms="0" started-at="2020-10-03T17:24:48Z" finished-at="2020-10-03T17:24:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nameofcar -->
+        <test-method status="PASS" signature="testdtaaprovider(java.lang.String, java.lang.String)[pri:0, instance:testng.cardetails@42d80b78]" name="testdtaaprovider" duration-ms="16" started-at="2020-10-03T17:24:48Z" data-provider="getdata" finished-at="2020-10-03T17:24:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[set first username]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[set first password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testdtaaprovider -->
+        <test-method status="PASS" signature="testdtaaprovider(java.lang.String, java.lang.String)[pri:0, instance:testng.cardetails@42d80b78]" name="testdtaaprovider" duration-ms="15" started-at="2020-10-03T17:24:48Z" data-provider="getdata" finished-at="2020-10-03T17:24:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[set second username]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[set second password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testdtaaprovider -->
+        <test-method status="PASS" signature="testdtaaprovider(java.lang.String, java.lang.String)[pri:0, instance:testng.cardetails@42d80b78]" name="testdtaaprovider" duration-ms="0" started-at="2020-10-03T17:24:48Z" data-provider="getdata" finished-at="2020-10-03T17:24:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[set third username]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[set third password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testdtaaprovider -->
+      </class> <!-- testng.cardetails -->
+    </test> <!-- SECONDTEST -->
+  </suite> <!-- Suite -->
+</testng-results>
